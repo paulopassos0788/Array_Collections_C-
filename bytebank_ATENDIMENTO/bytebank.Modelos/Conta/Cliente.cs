@@ -14,11 +14,13 @@
             }
             set
             {
-                if (value.Length < 3)
+                if (string.IsNullOrWhiteSpace(value) || value.Length < 3)
                 {
-                    Console.WriteLine("Nome do titular precisa ter pelo menos 3 caracteres.");
+                    Console.WriteLine("Nome do titular precisa ter pelo menos 3 caracteres e não pode ser vazio.");
+                    return;
                 }
-             }
+                _nome = value;
+            }
 
         }
         //public string Nome { get; set; }
