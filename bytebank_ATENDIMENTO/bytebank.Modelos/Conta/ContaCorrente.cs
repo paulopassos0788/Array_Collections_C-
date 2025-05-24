@@ -99,13 +99,18 @@
 		public ContaCorrente(int numero_agencia, string conta)
 		{
 			Numero_agencia = numero_agencia;
-			Conta = Guid.NewGuid().ToString().Substring(0, 8);
 			Conta = conta;
-            //Titular = new Cliente();
+            Titular = new Cliente();
             TotalDeContasCriadas++;
         }
 
-
+        public ContaCorrente(int numero_agencia)
+        {
+            Numero_agencia = numero_agencia;
+            Conta = Guid.NewGuid().ToString().Substring(0, 8);
+            Titular = new Cliente();
+            TotalDeContasCriadas++;
+        }
 
         public override string ToString()
         {
